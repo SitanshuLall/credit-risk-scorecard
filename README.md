@@ -134,6 +134,23 @@ streamlit run app.py
 
 The notebook takes about 1.5 minutes to run and writes every figure, table and model artifact.
 
+### Test with dummy data (no Kaggle download needed)
+
+`scripts/make_dummy_data.py` generates a synthetic file in the exact `cs-training.csv` format. It
+includes the real file's quirks: missing income, 96/98 codes, utilisation above 1, and age 0. Two
+environment variables point a run at that file and send all outputs to a separate folder, so the real
+results are never overwritten:
+
+```bat
+python scripts\make_dummy_data.py
+set CREDIT_DATA=data\dummy\cs-training.csv
+set CREDIT_OUT=data\dummy\run
+jupyter nbconvert --to notebook --execute notebooks\credit_scorecard.ipynb --output-dir data\dummy\run --output credit_scorecard_dummy.ipynb
+streamlit run app.py
+```
+
+Run `set CREDIT_DATA=` and `set CREDIT_OUT=` (or open a new terminal) to switch back to the real data.
+
 **Python 3.15 note:** `optbinning` needs Google OR-Tools, which has no Python 3.15 build, so
 `src/binning.py` implements the same approach: tree-based fine classing, then merging into monotonic
 coarse classes, with a separate Missing bin.

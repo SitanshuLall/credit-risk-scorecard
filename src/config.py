@@ -1,11 +1,18 @@
-"""Project-wide constants: paths, seed, scorecard scaling and illustrative loan economics."""
+"""Project-wide constants: paths, seed, scorecard scaling and illustrative loan economics.
+
+Two optional environment variables redirect a run (e.g. a test on dummy data):
+    CREDIT_DATA  - path to the input csv (default data/cs-training.csv)
+    CREDIT_OUT   - folder that receives models/ and reports/ (default: project root)
+"""
+import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA_PATH = ROOT / "data" / "cs-training.csv"
-MODELS_DIR = ROOT / "models"
-FIG_DIR = ROOT / "reports" / "figures"
-REPORTS_DIR = ROOT / "reports"
+DATA_PATH = Path(os.environ.get("CREDIT_DATA", ROOT / "data" / "cs-training.csv"))
+OUT_ROOT = Path(os.environ.get("CREDIT_OUT", ROOT))
+MODELS_DIR = OUT_ROOT / "models"
+REPORTS_DIR = OUT_ROOT / "reports"
+FIG_DIR = REPORTS_DIR / "figures"
 
 SEED = 42
 TEST_SIZE = 0.30
