@@ -1,0 +1,17 @@
+# Python 3.15. optbinning/scorecardpy are not installable on 3.15 (no OR-Tools build),
+# so WoE binning is implemented in src/binning.py.
+pandas==3.1.0
+numpy==2.5.4
+scipy==1.18.1
+scikit-learn==1.9.1
+statsmodels==0.15.0
+lightgbm==4.7.0
+shap==0.54.1
+matplotlib==3.11.2
+seaborn==0.13.2
+streamlit==1.66.1
+joblib==1.6.0
+nbconvert==7.17.2
+nbclient==0.11.0
+nbformat==5.11.1
+ipykernel==7.4.0
