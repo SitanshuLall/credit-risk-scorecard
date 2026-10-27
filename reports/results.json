@@ -1,0 +1,92 @@
+{
+  "n_rows": 150000,
+  "bad_rate": 0.06684,
+  "final_features": [
+    "RevolvingUtil",
+    "PastDue90Plus",
+    "PastDue30_59",
+    "PastDue60_89",
+    "Age",
+    "MonthlyIncome",
+    "RealEstateLoans",
+    "Dependents",
+    "DebtRatio"
+  ],
+  "dropped": {
+    "OpenCreditLines": "positive coefficient +0.082 (p=0.095)"
+  },
+  "scorecard_test": {
+    "AUC": 0.8551774156956948,
+    "Gini": 0.7103548313913897,
+    "KS": 0.5499764646153472
+  },
+  "scorecard_train": {
+    "AUC": 0.8546446421007334,
+    "Gini": 0.7092892842014669,
+    "KS": 0.5506134948894219
+  },
+  "lgbm_test": {
+    "AUC": 0.8668428730282466,
+    "Gini": 0.7336857460564932,
+    "KS": 0.57524166203897
+  },
+  "lgbm_train": {
+    "AUC": 0.8794702444430925,
+    "Gini": 0.758940488886185,
+    "KS": 0.6010881899379813
+  },
+  "lgbm_best_params": {
+    "subsample": 0.85,
+    "scale_pos_weight": 3.0,
+    "reg_lambda": 1.0,
+    "num_leaves": 31,
+    "n_estimators": 200,
+    "min_child_samples": 400,
+    "learning_rate": 0.02,
+    "colsample_bytree": 0.6
+  },
+  "psi_score": 0.00027400514836339277,
+  "cutoff": 536,
+  "conservative_cutoff": 550,
+  "cutoff_test": {
+    "approved": 40967.0,
+    "approval_rate": 0.9103777777777777,
+    "bad_rate_approved": 0.03546757145995558,
+    "bads_declined_pct": 0.5169547872340425,
+    "profit": 773975999.9999999
+  },
+  "conservative_test": {
+    "approved": 38381.0,
+    "approval_rate": 0.8529111111111111,
+    "bad_rate_approved": 0.028686068627706417,
+    "bads_declined_pct": 0.6339760638297872,
+    "profit": 762599999.9999999
+  },
+  "approve_all_test": {
+    "cutoff": 419.0,
+    "approved": 45000.0,
+    "approval_rate": 1.0,
+    "bad_rate_approved": 0.06684444444444444,
+    "bads_declined_pct": 0.0,
+    "profit": 646848000.0
+  },
+  "band_edges": [
+    536,
+    573,
+    595,
+    607
+  ],
+  "top_decile_bad_capture": 0.5435505319148937,
+  "iv": {
+    "RevolvingUtil": 1.1102,
+    "PastDue90Plus": 0.8866,
+    "PastDue30_59": 0.7374,
+    "PastDue60_89": 0.5753,
+    "Age": 0.2382,
+    "OpenCreditLines": 0.0925,
+    "MonthlyIncome": 0.0764,
+    "RealEstateLoans": 0.0389,
+    "Dependents": 0.0357,
+    "DebtRatio": 0.02
+  }
+}

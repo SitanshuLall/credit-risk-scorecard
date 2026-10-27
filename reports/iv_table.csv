@@ -1,0 +1,11 @@
+Feature,IV,Bins,Strength
+RevolvingUtil,1.1101515522197205,6,Very strong (check for leakage)
+PastDue90Plus,0.8866435116764315,3,Very strong (check for leakage)
+PastDue30_59,0.737365784156616,4,Very strong (check for leakage)
+PastDue60_89,0.5752884000475126,2,Very strong (check for leakage)
+Age,0.2382239968495721,6,Medium
+OpenCreditLines,0.09249504560555791,5,Weak
+MonthlyIncome,0.07638398563606752,6,Weak
+RealEstateLoans,0.03891565124457535,2,Weak
+Dependents,0.03565395108768809,6,Weak
+DebtRatio,0.020004021001565297,3,Weak
